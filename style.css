@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.panel-top {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
+/* desque aqui es lo que inporta */
+
+.card-expanding-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto-fit, minmax(20%, 1fr));
+  padding: 1rem;
+  width: 100%;
+}
+
+.card-items {
+  position: relative;
+  margin: 0.5rem auto;
+}
+
+.card-imgs {
+  width: 40vw;
+  height: 35vh;
+}
+
+.card-items > a {
+  text-decoration: none;
+}
+
+.card-imgs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0.5rem;
+  color: wheat;
+}
+
+@media screen and (min-width: 768px) {
+  .card-imgs {
+    width: 30vw;
+    height: 30vh;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-expanding-panel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-items {
+    display: flex;
+    justify-content: center;
+    height: 35vw;
+    width: 6vw;
+    border-radius: 5rem;
+    overflow: hidden;
+    margin: 0.5rem;
+    filter: grayscale(80%);
+    transition: all 0.3s ease;
+  }
+
+  .card-imgs img {
+    height: auto;
+    object-position: center;
+  }
+
+  .card-title {
+    display: none;
+    transition: display 0.3s ease;
+  }
+
+  .change-visibily {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 2rem;
+    background-color: black;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .expand {
+    width: 30vw;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #44ddff, 0 0 50px #44ddff;
+    filter: grayscale(0);
+  }
+}
